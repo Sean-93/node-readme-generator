@@ -1,6 +1,6 @@
-// const questions = [
+const questions = [
 
-// ];
+];
 
 // function writeToFile(fileName, data) {
 // }
@@ -12,8 +12,12 @@
 // init();
 
 //Links inquirer and fs packages
-var inquirer = require("inquirer");
-var fs = require('fs');
+
+//MAKE SURE TO USE AXIOS!!!!!!
+const inquirer = require("inquirer");
+const fs = require('fs');
+const axios = require("axios");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
 //user inquirer package to set up a prompt
 inquirer.prompt([
@@ -68,6 +72,13 @@ inquirer.prompt([
 
 ]).then(function(data) {
     const readMe = `
+    ${data.name}
+    ${data.title}
+    ${data.description}
+    ${data.installation}
+    ${data.license}
+    ${data.tests}
+    ${data.questions}
     
     `
     var fileName = data.name.toLowerCase().split(' ').join('') + ".md";
