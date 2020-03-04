@@ -2,44 +2,63 @@ console.log("This is a readme generator that generates a dynamic readme and pull
 
 setTimeout(() => {console.log("You will be prompted to fill out information to place in the readme once it is generated.");
     
-}, 5000);
+}, 3000);
 
 setTimeout(() => {console.log("Make sure you include all important details so that your project is well outlined.");
     
+}, 6000);
+
+setTimeout(() => {console.log("READY?");
+    
+}, 9000);
+
+setTimeout(() => {console.log("-3-");
+    
 }, 10000);
+
+setTimeout(() => {console.log("-2-");
+    
+}, 11000);
+
+setTimeout(() => {console.log("-1-");
+    
+}, 12000);
+
+setTimeout(() => {console.log("GO!");
+    
+}, 13000);
 
 
 const inquirer = require("inquirer");
 const fs = require('fs');
 const axios = require("axios");
 const generateMarkdown = require("./utils/generateMarkdown.js");
-// const queryUrl = `https://api.github.com/users/${username}`;
 
 setTimeout(() => {
     
     inquirer.prompt([
-    {
+        {
         
         type: "input",
         name: "name",
         message: "What is your GitHub username?"
     },
     {
-         
-         type: "input",
-         name: "title",
-         message: "What is the name of the project?"
-    
+        
+        type: "input",
+        name: "title",
+        message: "What is the name of the project?"
+        
     },
     {
-         type: "input",
-         name: "description",
-         message: "Can you give me a summary of the project?"
+        type: "input",
+        name: "description",
+        message: "Give me a summary of the application."
     },
     {
         type: "input",
         name: "installation",
-        message: "How do I install this program?"
+        message: "How do I install?"
     },
     {
         type: "input",
@@ -54,31 +73,33 @@ setTimeout(() => {
     {
         type: "input",
         name: "contributors",
-        message: "Who contributed to this?"
+        message: "Who contributed to creating this?"
     },
     {
         type: "input",
         name: "tests",
-        message: "How do you test this program?"
+        message: "How did you test the program?"
     },
     {
         type: "input",
         name: "questions",
-        message: "Is there anything else you would like to add to this readme?"
+        message: "Is there anything else you would like to add to this readme that wasn't covered with previous prompts?"
     },
     
-    ]).then(function(data) {
-        const readMe = `
-        ${data.title}
-        ${data.name}
-        ${data.description}
-        ${data.installation}
-        ${data.license}
-        ${data.tests}
-        ${data.questions}
-        
-        `
-        var fileName = data.name.toLowerCase().split(' ').join('') + ".md";
+]).then(function(data) {
+    const readMe = 
+    `${data.title}
+     ${data.name}
+     ${data.description}
+     ${data.installation}
+     ${data.license}
+     ${data.tests}
+     ${data.questions}`
+    
+    
+    const queryUrl = `https://api.github.com/users/${data.name};`
+    axios.get(queryUrl).then(res => {if(res.data.avatar_url){data.avatar_url = res.data.avatar_url;} })
+        const fileName = data.title.toLowerCase().split(' ').join('') + ".md";
         
         fs.writeFile(fileName, readMe, function(err) {
            
@@ -86,17 +107,7 @@ setTimeout(() => {
                 return console.log(err);
             }
         
-            console.log("Readme Generated!");
+            console.log("Thank you! Your readme has been generated!");
         });
     });
 }, 15000);
-
-
-const questions = [
-    
-];
-
-
-
-
-
