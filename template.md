@@ -1,6 +1,4 @@
-function generateMarkdown(data) {
-  const readMe =
-    `# ${data.title}
+# ${data.title}
 
 ## Description:
 #### ${data.description}
@@ -31,11 +29,10 @@ function generateMarkdown(data) {
 - ${data.other}
 
 ### Contributors:
-![alt text](${data.avatar_url} "${data.username}")
+${data.avatar_url}
 ${data.email}
-- ${data.contributors}`
+- ${data.contributors}
 
-return readMe;
-}
 
-module.exports = generateMarkdown;
+
+

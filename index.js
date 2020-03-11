@@ -1,3 +1,5 @@
+
+
 console.log("This is a readme generator that generates a dynamic readme and pulls profile data from your GitHub account.");
 
 setTimeout(() => {console.log("You will be prompted to fill out information to place in the readme once it is generated.");
@@ -40,7 +42,7 @@ setTimeout(() => {
         {
         
         type: "input",
-        name: "name",
+        name: "username",
         message: "What is your GitHub username?"
     },
     {
@@ -72,34 +74,37 @@ setTimeout(() => {
     },
     {
         type: "input",
-        name: "contributors",
-        message: "Who contributed to creating this?"
-    },
-    {
-        type: "input",
         name: "tests",
         message: "How did you test the program?"
     },
     {
         type: "input",
-        name: "questions",
+        name: "other",
         message: "Is there anything else you would like to add to this readme that wasn't covered with previous prompts?"
+    },
+    {
+        type: "input",
+        name: "contributors",
+        message: "Who contributed to creating this?"
+    },
+    {
+        
+        type: "input",
+        name: "email",
+        message: "What is a good email to contact you at?"
     },
     
 ]).then(function(data) {
-    const readMe = 
-    `${data.title}
-     ${data.name}
-     ${data.description}
-     ${data.installation}
-     ${data.license}
-     ${data.tests}
-     ${data.questions}`
-    
-    
-    const queryUrl = `https://api.github.com/users/${data.name};`
-    axios.get(queryUrl).then(res => {if(res.data.avatar_url){data.avatar_url = res.data.avatar_url;} })
+   
+    const queryUrl = `https://api.github.com/users/${data.username}`
+    console.log(queryUrl);
+    axios.get(queryUrl)
+    .then(res => {
+        if(res.data.avatar_url){
+            data.avatar_url = res.data.avatar_url;
+        }
         const fileName = data.title.toLowerCase().split(' ').join('') + ".md";
+        const readMe = generateMarkdown(data);
         
         fs.writeFile(fileName, readMe, function(err) {
            
@@ -109,5 +114,9 @@ setTimeout(() => {
         
             console.log("Thank you! Your readme has been generated!");
         });
+     });
     });
 }, 15000);
+
+    
+    

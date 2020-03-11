@@ -1,9 +1,7 @@
-function generateMarkdown(data) {
-  const readMe =
-    `# ${data.title}
+# Node Readme Generator
 
 ## Description:
-#### ${data.description}
+#### Here is thrsgsg
 
 ## Table of Contents:
 
@@ -16,26 +14,21 @@ function generateMarkdown(data) {
 * [Contributors](#Contributors)
 
 ### Installation:
-- ${data.installation}
+- sgsfgsf
 
 ### Usage:
-- ${data.usage}
+- sfgsf
 
 ### Licensing:
-- ${data.license}
+- sfsfsfg
 
 ### Testing:
-- ${data.tests}
+- sgsfgsfgs
 
 ### Other/Miscellaneous:
-- ${data.other}
+- sfsfgsg
 
 ### Contributors:
-![alt text](${data.avatar_url} "${data.username}")
-${data.email}
-- ${data.contributors}`
-
-return readMe;
-}
-
-module.exports = generateMarkdown;
+![alt text](https://avatars2.githubusercontent.com/u/59424937?v=4 "Sean-93")
+seandanielrooney@gmail.com
+- sfsff
