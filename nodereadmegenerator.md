@@ -1,7 +1,7 @@
 # Node Readme Generator
 
 ## Description:
-#### Here is thrsgsg
+#### This dynamically creates a .md file
 
 ## Table of Contents:
 
@@ -14,21 +14,22 @@
 * [Contributors](#Contributors)
 
 ### Installation:
-- sgsfgsf
+- you can get this from my github
 
 ### Usage:
-- sfgsf
+- you run this in the terminal with node
 
 ### Licensing:
-- sfsfsfg
+- anyone can use this
 
 ### Testing:
-- sgsfgsfgs
+- trial & error
 
 ### Other/Miscellaneous:
-- sfsfgsg
+- please give me an A on this, lol
 
 ### Contributors:
 ![alt text](https://avatars2.githubusercontent.com/u/59424937?v=4 "Sean-93")
-seandanielrooney@gmail.com
-- sfsff
+
+#### Email Address: seandanielrooney@gmail.com
+- just me

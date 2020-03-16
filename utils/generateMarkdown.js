@@ -32,7 +32,8 @@ function generateMarkdown(data) {
 
 ### Contributors:
 ![alt text](${data.avatar_url} "${data.username}")
-${data.email}
+
+#### Email Address: ${data.email}
 - ${data.contributors}`
 
 return readMe;
